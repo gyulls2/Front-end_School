@@ -1,0 +1,87 @@
+/* 초기화 시, CSS 상속이 되는 속성들은 inherit,
+상속이 되지 않는 속성은 initial,
+unset은 브라우저가 알아서 계산해줌~~~ */
+
+h1,
+h2,
+ul,
+p {
+  margin: unset;
+  padding: unset;
+}
+
+li {
+  list-style-type: none;
+}
+
+h1 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+body {
+  background-image: url(images/background.gif);
+}
+
+.wrapper {
+  background-color: #ddd;
+  width: 800px;
+  height: auto;
+  margin: 100px auto;
+}
+
+.header {
+  background-image: url(images/cover05.png);
+  background-size: cover;
+  background-position: center;
+  padding: 100px 0;
+  color: #fff;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+}
+
+.header h1 {
+  text-align: center;
+  font-size: 40px;
+}
+
+.header p {
+  width: fit-content;
+  border-top: 4px solid #fff;
+  padding: 10px 20px;
+  margin: 0 auto;
+}
+
+.section {
+  background-color: #fff;
+  margin: 20px;
+  padding: 20px;
+  background-image: url(images/icon-information.png);
+  background-repeat: no-repeat;
+  background-position: right 30px center;
+}
+
+.skill {
+  background-image: url(images/icon-skills.png);
+}
+
+.section h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: salmon;
+}
+
+.list li {
+  border-left: 5px solid #ddd;
+  padding-left: 5px;
+}
+
+.footer {
+  text-align: center;
+  padding: 10px 0;
+  background-color: #f4f4f4;
+}

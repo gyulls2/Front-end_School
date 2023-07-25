@@ -1,0 +1,214 @@
+/* reset */
+a {
+  text-decoration: none;
+  display: inline-block;
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  border: 0;
+  background: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+button:enabled {
+  cursor: pointer;
+}
+
+.a11y-hidden {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
+@font-face {
+  font-family: "SpoqaHanSansNeo-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.box-ui {
+  width: 472px;
+  height: 50px;
+  border-radius: 5px;
+  border: 1px solid #c4c4c4;
+  box-sizing: border-box;
+  background: #fff;
+  color: #767676;
+  margin-bottom: 10px;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: "SpoqaHanSansNeo-Regular";
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #c4c4c4;
+}
+
+.wrapper {
+  width: 520px;
+  height: 712px;
+  border-radius: 10px;
+  border: 1px solid #c4c4c4;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+section {
+  padding: 0 24px;
+}
+
+.header {
+  padding: 20px 0 18px 0;
+  border-bottom: 1px solid #c4c4c4;
+  text-align: center;
+  position: relative;
+}
+
+.close {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url(images/close.png);
+  background-size: 16px 16px;
+  position: absolute;
+  right: 24px;
+  top: 22px;
+
+  /* background: url(images/close.png) no-repeat right 24px center / 16px; */
+}
+
+.info {
+  margin: 24px 0;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.user-id,
+.user-pw {
+  padding: 15px 16px;
+  box-sizing: border-box;
+}
+
+.login-btn {
+  margin: 20px 0;
+  border-color: #2f80ed;
+  color: #fff;
+  background: #2f80ed;
+}
+
+.login-form .container {
+  font-size: 14px;
+  color: #767676;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.login-form .container a {
+  padding: 0 12px;
+}
+
+.login-form .container .join {
+  border-right: 1px solid #767676;
+}
+
+/* 소셜로그인 ------------------------------------------------- */
+.split {
+  margin: 30px 0 20px 0;
+  color: #767676;
+  font-family: Spoqa Han Sans Neo;
+  font-size: 14px;
+  display: block;
+  position: relative;
+}
+
+.split::before,
+.split::after {
+  content: "";
+  display: inline-block;
+  font-size: 14px;
+  width: 210px;
+  height: 1px;
+  background: #c4c4c4;
+  vertical-align: middle;
+}
+
+.split::before {
+  margin-right: 12px;
+}
+
+.split::after {
+  margin-left: 12px;
+}
+
+.social-list li {
+  text-align: center;
+  line-height: 50px;
+}
+
+[class^="icon"] {
+  position: relative;
+}
+
+[class^="icon"]::before {
+  content: "";
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  top: 11px;
+  left: 12px;
+
+  background: url("./images/icon_sprites_retina.png");
+  background-size: 117px 84px;
+  background-position: -52px -11px;
+}
+
+.icon-facebook {
+  border-color: #767676;
+}
+
+.icon-facebook {
+  border-color: #2d9cdb;
+}
+.icon-facebook::before {
+  background-position: -93px -10px;
+}
+
+.icon-naver {
+  border-color: #00bf18;
+}
+
+.icon-naver::before {
+  background-position: -10px -10px;
+}
+
+.icon-kakao {
+  border-color: #f2c94c;
+}
+.icon-kakao::before {
+  background-position: -10px -52px;
+}
+
+.modal {
+  position: absolute;
+  opacity: 0.5;
+}
+
+/* css sprite 기법 */
+
+/* 단점 : 이미지 하나가 깨지면 전부 깨진다, 이미지 교체가 어려움(기존 이미지는 두고 새로운 이미지 추가),
+-> 점점 용량이 커짐*/

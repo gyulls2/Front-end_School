@@ -33,7 +33,18 @@
     <img id="img" src="lion.jpg" alt="animal" class="rounded-circle mt-5">
     <h2 id="animal" class="text-center mt-5">동물이름</h2>
     <h3 id="explain" class="text-center mt-5">설명</h3>
+    <div class="share a2a_kit a2a_kit_size_32 a2a_default_style">
+      <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+      <a class="a2a_button_facebook"></a>
+      <a class="a2a_button_twitter"></a>
+      <a class="a2a_button_email"></a>
+    </div>
   </article>
+
+  <!-- 카카오 adfit -->
+  <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-1amJfQtEOfJnb2td" data-ad-width="320"
+    data-ad-height="100"></ins>
+  <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
 
   <input type="hidden" id="EI" value="0">
   <input type="hidden" id="SN" value="0">
@@ -99,7 +110,7 @@
         ($("#JP").val() < 2) ? mbti += "P" : mbti += "J";
 
         alert(mbti);
-        $("#img").attr("src",result[mbti]["img"]);
+        $("#img").attr("src", result[mbti]["img"]);
         $("#animal").html(result[mbti]["animal"]);
         $("#explain").html(result[mbti]["explain"]);
 
@@ -114,6 +125,15 @@
       }
     }
   </script>
+
+  <!-- AddToAny BEGIN -->
+
+  <script>
+    var a2a_config = a2a_config || {};
+    a2a_config.num_services = 6;
+  </script>
+  <script async src="https://static.addtoany.com/menu/page.js"></script>
+  <!-- AddToAny END -->
 </body>
 
 </html>

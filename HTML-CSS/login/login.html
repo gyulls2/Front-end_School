@@ -6,8 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>로그인</title>
-  <link rel="stylesheet" href="../reset.css">
-  <link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/login.css">
 </head>
 
 <body>
@@ -18,14 +18,16 @@
     </div>
 
     <section>
-      <h2 class="info">위니브에서 여러분의 궁금증을 해결하세요! :)</h2>
+      <h2 class="info">위니브에서 여러분의 궁금증을 해결하세요! : &#41;</h2>
       <form class="login-form">
-        <input type="text" placeholder="아이디" class="user-id box-ui">
+        <input type="text" id="ID" placeholder="아이디" class="user-id box-ui null">
+        <label for="ID" class="id_labl null">아이디를 입력해 주세요.</label>
 
-        <input type="password" placeholder="비밀번호" class="user-pw box-ui">
+        <input type="password" id="PW" placeholder="비밀번호" class="user-pw box-ui">
+        <label for="PW" class="pw_labl">아이디 혹은 비밀번호과 일치하지 않습니다.</label>
 
-        <input type="radio" id="login-state">
-        <label for="login-state"> 로그인 상태 유지</label>
+        <input type="checkbox" id="inpHold" class="inphold txt-hide">
+        <label for="inpHold" class="labl-hold"> 로그인 상태 유지</label>
 
         <button type="submit" class="login-btn box-ui">로그인</button>
         <div class="container">
@@ -59,7 +61,7 @@
 
   </div>
 
-  <!-- <img src="./images/modal.png" alt="" class="modal"> -->
+  <!-- <img src="./images/modal-5.png" alt="" class="modal"> -->
 </body>
 
 </html>

@@ -47,20 +47,26 @@ button:enabled {
   margin-bottom: 10px;
 }
 
+.txt-hide {
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  clip-path: inset(50%);
+}
+
+/* CSS 적용 ------------------------------------------- */
 body {
   width: 100vw;
   height: 100vh;
   font-family: "SpoqaHanSansNeo-Regular";
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background-color: #c4c4c4;
 }
 
 .wrapper {
   width: 520px;
-  height: 712px;
+  margin: 50px auto;
+  padding-bottom: 25px;
+  position: relative;
   border-radius: 10px;
   border: 1px solid #c4c4c4;
   background-color: #fff;
@@ -72,10 +78,14 @@ section {
 }
 
 .header {
-  padding: 20px 0 18px 0;
+  padding: 22px 0 18px 0;
+  box-sizing: border-box;
   border-bottom: 1px solid #c4c4c4;
   text-align: center;
   position: relative;
+  font-weight: 500;
+
+  word-spacing: 2px;
 }
 
 .close {
@@ -92,20 +102,24 @@ section {
 }
 
 .info {
-  margin: 24px 0;
+  margin: 27px 0 25px 0;
   font-size: 20px;
   line-height: 24px;
 }
 
 .user-id,
 .user-pw {
-  padding: 15px 16px;
-  box-sizing: border-box;
+  padding: 15px;
+  font-size: 16px;
+}
+
+.user-pw {
+  margin-bottom: 15px;
 }
 
 .login-btn {
-  margin: 20px 0;
-  border-color: #2f80ed;
+  margin: 20px 0 22px 0;
+  font-size: 18px;
   color: #fff;
   background: #2f80ed;
 }
@@ -126,9 +140,65 @@ section {
   border-right: 1px solid #767676;
 }
 
+/* 아이디, 비밀번호 null */
+.id_labl,
+.pw_labl {
+  display: none;
+
+  color: #f4492e;
+  font-size: 14px;
+  font-weight: 400;
+
+  position: relative;
+  top: -2px;
+  left: 2px;
+  margin-bottom: 8px;
+}
+
+.null {
+  display: block;
+  border-color: #f4492e;
+}
+
+/* 로그인 상태 유지 */
+.labl-hold {
+  position: relative;
+  color: #767676;
+  margin-left: 0;
+  margin-left: -9px;
+  cursor: pointer;
+}
+
+.labl-hold::before {
+  display: inline-block;
+  content: "";
+  width: 22px;
+  height: 22px;
+  background: url(../images/check-box.svg) no-repeat 0 0 / 22px;
+  margin-right: 5px;
+  vertical-align: -5px;
+}
+
+.labl-hold::after {
+  display: inline-block;
+  content: "";
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 0;
+  background: url(../images/check-box-checked.svg) no-repeat 0 0 / 22px;
+  margin-right: 5px;
+  vertical-align: -5px;
+  opacity: 0;
+}
+
+.inphold:checked + .labl-hold::after {
+  opacity: 1;
+}
+
 /* 소셜로그인 ------------------------------------------------- */
 .split {
-  margin: 30px 0 20px 0;
+  margin: 35px 0 20px 0;
   color: #767676;
   font-family: Spoqa Han Sans Neo;
   font-size: 14px;
@@ -144,6 +214,7 @@ section {
   width: 210px;
   height: 1px;
   background: #c4c4c4;
+  margin-bottom: 3px;
   vertical-align: middle;
 }
 
@@ -162,51 +233,50 @@ section {
 
 [class^="icon"] {
   position: relative;
+  text-indent: 20px;
 }
 
 [class^="icon"]::before {
+  display: inline-block;
   content: "";
   width: 28px;
   height: 28px;
   position: absolute;
-  top: 11px;
-  left: 12px;
+  top: 13px;
+  left: 13px;
 
-  background: url("./images/icon_sprites_retina.png");
+  background-image: url("../images/icon_sprites_retina.png");
   background-size: 117px 84px;
-  background-position: -52px -11px;
-}
-
-.icon-facebook {
-  border-color: #767676;
+  background-position: -52px -10px;
+  vertical-align: -10px;
 }
 
 .icon-facebook {
   border-color: #2d9cdb;
 }
-.icon-facebook::before {
-  background-position: -93px -10px;
-}
-
 .icon-naver {
   border-color: #00bf18;
 }
-
-.icon-naver::before {
-  background-position: -10px -10px;
-}
-
 .icon-kakao {
   border-color: #f2c94c;
+}
+
+.icon-facebook::before {
+  background-position: -93px -10px;
+}
+.icon-naver::before {
+  background-position: -10px -10px;
 }
 .icon-kakao::before {
   background-position: -10px -52px;
 }
 
-.modal {
+/* .modal {
   position: absolute;
+  top: 0;
   opacity: 0.5;
-}
+  display: none;
+} */
 
 /* css sprite 기법 */
 

@@ -1,0 +1,150 @@
+/* reset ------------------------------------------------- */
+body,
+h1,
+h2,
+ul,
+button {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+button {
+  background-color: inherit;
+  font: inherit;
+  border: none;
+  cursor: pointer;
+}
+
+.a11y-hidden {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
+/* CSS -------------------------------------------------- */
+body {
+  background-color: #eae8fe;
+  width: 100vw;
+}
+
+.header {
+  width: fit-content;
+  margin: 0 auto 43px auto;
+}
+
+.main {
+  width: 748px;
+  min-height: 500px;
+  margin: 0 auto;
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  grid-template-rows: 1fr 5fr;
+  gap: 20px;
+
+  grid-template-areas:
+    "sec1 sec2"
+    "sec1 sec3";
+}
+
+.main .section-2 {
+  grid-area: sec2;
+}
+.main .section-3 {
+  grid-area: sec3;
+}
+
+.main section {
+  background-color: #fff;
+}
+
+/* section-1 ------------------------------------------------------------ */
+.main .section-1 {
+  grid-area: sec1;
+  max-width: 360px;
+  padding: 31px 27px;
+  box-sizing: border-box;
+
+  display: grid;
+  grid-template-areas:
+    "sec1-1"
+    "sec1-2";
+}
+
+.main .section-1 > div:first-child {
+  grid-area: sec1-1;
+}
+
+.main .section-1 > div:last-child {
+  grid-area: sec1-2;
+}
+
+.bev-list {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.bev-list li {
+  width: 94px;
+  height: 130px;
+  flex-shrink: 0;
+
+  border-radius: 10px;
+  border: 3px solid #6327fe;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.5);
+}
+
+.bev-list button {
+  padding: 7px 10px 8px 10px;
+  box-sizing: border-box;
+
+  display: inline-flex;
+  /* display: flex; */
+  gap: 6px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.bev-list img {
+  width: 36px;
+  height: 65px;
+}
+
+.bev-list span {
+  font-size: 9px;
+  color: #333;
+}
+
+.bev-list strong {
+  width: 70px;
+  height: 22px;
+  flex-shrink: 0;
+  border-radius: 50px;
+  background: #6327fe;
+
+  color: #fff;
+  text-align: center;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 22px; /* 12px */
+}
+
+/* section-2 ------------------------------------------------------------ */
+/* section-3 ------------------------------------------------------------ */

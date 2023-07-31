@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>커스텀 input, select 박스</title>
+  <style>
+    .txt-hide {
+      overflow: hidden;
+      width: 1px;
+      height: 1px;
+      clip-path: inset(50%);
+      /* inset 네모 모양으로 잘라줌 */
+      /* width,height 0값으로 주는 것은 접근성 측면에서 사용하지 않음*/
+    }
+
+    .labl-hol {
+      position: relative;
+    }
+
+    .labl-hold::before {
+      display: inline-block;
+      content: "";
+      width: 22px;
+      height: 22px;
+      margin-right: 10px;
+      border: 1px solid black;
+      vertical-align: -5px;
+    }
+
+    .labl-hold::after {
+      content: "";
+      position: absolute;
+      top: 10px;
+      left: 41px;
+      width: 22px;
+      height: 22px;
+      background: url(images/checkmark.png) no-repeat 0 0 / 22px;
+      opacity: 0;
+      transition: all 0.3s;
+    }
+
+    .inphold:checked+.labl-hold::after {
+      left: 21px;
+      opacity: 1;
+    }
+
+    /* 접근성 요소 focus 처리 */
+    /* 키보드로 접근했을때만 포커싱 -> focus-visivle */
+    .inphold:focus-visible+.labl-hold::before {
+      outline: 2px solid teal;
+      outline-offset: 3px;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="checkbox" id="inpHold" class="inphold txt-hide">
+  <label for="inpHold" class="labl-hold">로그인 상태 유지</label>
+</body>
+
+</html>

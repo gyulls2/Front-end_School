@@ -1,0 +1,284 @@
+/* reset */
+a {
+  text-decoration: none;
+  display: inline-block;
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  border: 0;
+  background: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+button:enabled {
+  cursor: pointer;
+}
+
+.a11y-hidden {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
+@font-face {
+  font-family: "SpoqaHanSansNeo-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.box-ui {
+  width: 472px;
+  height: 50px;
+  border-radius: 5px;
+  border: 1px solid #c4c4c4;
+  box-sizing: border-box;
+  background: #fff;
+  color: #767676;
+  margin-bottom: 10px;
+}
+
+.txt-hide {
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  clip-path: inset(50%);
+}
+
+/* CSS 적용 ------------------------------------------- */
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: "SpoqaHanSansNeo-Regular";
+  background-color: #c4c4c4;
+}
+
+.wrapper {
+  width: 520px;
+  margin: 50px auto;
+  padding-bottom: 25px;
+  position: relative;
+  border-radius: 10px;
+  border: 1px solid #c4c4c4;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+section {
+  padding: 0 24px;
+}
+
+.header {
+  padding: 22px 0 18px 0;
+  box-sizing: border-box;
+  border-bottom: 1px solid #c4c4c4;
+  text-align: center;
+  position: relative;
+  font-weight: 500;
+
+  word-spacing: 2px;
+}
+
+.close {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url(images/close.png);
+  background-size: 16px 16px;
+  position: absolute;
+  right: 24px;
+  top: 22px;
+
+  /* background: url(images/close.png) no-repeat right 24px center / 16px; */
+}
+
+.info {
+  margin: 27px 0 25px 0;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.user-id,
+.user-pw {
+  padding: 15px;
+  font-size: 16px;
+}
+
+.user-pw {
+  margin-bottom: 15px;
+}
+
+.login-btn {
+  margin: 20px 0 22px 0;
+  font-size: 18px;
+  color: #fff;
+  background: #2f80ed;
+}
+
+.login-form .container {
+  font-size: 14px;
+  color: #767676;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.login-form .container a {
+  padding: 0 12px;
+}
+
+.login-form .container .join {
+  border-right: 1px solid #767676;
+}
+
+/* 아이디, 비밀번호 null */
+.id_labl,
+.pw_labl {
+  display: none;
+
+  color: #f4492e;
+  font-size: 14px;
+  font-weight: 400;
+
+  position: relative;
+  top: -2px;
+  left: 2px;
+  margin-bottom: 8px;
+}
+
+.null {
+  display: block;
+  border-color: #f4492e;
+}
+
+/* 로그인 상태 유지 */
+.labl-hold {
+  position: relative;
+  color: #767676;
+  margin-left: 0;
+  margin-left: -9px;
+  cursor: pointer;
+}
+
+.labl-hold::before {
+  display: inline-block;
+  content: "";
+  width: 22px;
+  height: 22px;
+  background: url(../images/check-box.svg) no-repeat 0 0 / 22px;
+  margin-right: 5px;
+  vertical-align: -5px;
+}
+
+.labl-hold::after {
+  display: inline-block;
+  content: "";
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 0;
+  background: url(../images/check-box-checked.svg) no-repeat 0 0 / 22px;
+  margin-right: 5px;
+  vertical-align: -5px;
+  opacity: 0;
+}
+
+.inphold:checked + .labl-hold::after {
+  opacity: 1;
+}
+
+/* 소셜로그인 ------------------------------------------------- */
+.split {
+  margin: 35px 0 20px 0;
+  color: #767676;
+  font-family: Spoqa Han Sans Neo;
+  font-size: 14px;
+  display: block;
+  position: relative;
+}
+
+.split::before,
+.split::after {
+  content: "";
+  display: inline-block;
+  font-size: 14px;
+  width: 210px;
+  height: 1px;
+  background: #c4c4c4;
+  margin-bottom: 3px;
+  vertical-align: middle;
+}
+
+.split::before {
+  margin-right: 12px;
+}
+
+.split::after {
+  margin-left: 12px;
+}
+
+.social-list li {
+  text-align: center;
+  line-height: 50px;
+}
+
+[class^="icon"] {
+  position: relative;
+  text-indent: 20px;
+}
+
+[class^="icon"]::before {
+  display: inline-block;
+  content: "";
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  top: 13px;
+  left: 13px;
+
+  background-image: url("../images/icon_sprites_retina.png");
+  background-size: 117px 84px;
+  background-position: -52px -10px;
+  vertical-align: -10px;
+}
+
+.icon-facebook {
+  border-color: #2d9cdb;
+}
+.icon-naver {
+  border-color: #00bf18;
+}
+.icon-kakao {
+  border-color: #f2c94c;
+}
+
+.icon-facebook::before {
+  background-position: -93px -10px;
+}
+.icon-naver::before {
+  background-position: -10px -10px;
+}
+.icon-kakao::before {
+  background-position: -10px -52px;
+}
+
+/* .modal {
+  position: absolute;
+  top: 0;
+  opacity: 0.5;
+  display: none;
+} */
+
+/* css sprite 기법 */
+
+/* 단점 : 이미지 하나가 깨지면 전부 깨진다, 이미지 교체가 어려움(기존 이미지는 두고 새로운 이미지 추가),
+-> 점점 용량이 커짐*/

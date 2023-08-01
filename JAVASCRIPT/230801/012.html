@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>String</title>
+</head>
+
+<body>
+  <script>
+    let s = 'abcdefghij'
+
+    console.log(s.length) //10
+    console.log(s.toUpperCase()) //ABCDEFGHIJ
+    console.log(s.toLowerCase()) //abcdefghij
+
+    // 존재하는 값을 찾았을 때
+    console.log(s.indexOf("c")) //2
+    console.log(s.search("c")) //2
+
+    // 존재하지 않는 값을 찾았을 때
+    console.log(s.indexOf("z")) //-1
+    console.log(s.search("z")) //-1
+
+    // 정규표현식을 넣었을 때, (indexof 같은 경우에는 정규표현식을 허용하지 않습니다.)
+    console.log(s.indexOf(/cd/g)) //-1
+    console.log(s.search(/cd/g)) //2
+
+    let ss = 'paullab CEO 이호준 CTO 김창영'
+    console.log(ss.search(/C/g))
+    console.log(ss.search(/CTO/g))
+
+    // 버전
+    // indexOF ECMAScript 5
+    // 검색 위치 지정 가능
+    // search ECMAScript 1
+    // 정규표현식 가능
+    // 검색 위치 지정 가능 기능
+    let sss = 'paullab CEO 이호준 CTO 김창영'
+    console.log(sss.indexOf('C', 11)) // CTO만 찾고 싶어요!
+
+  </script>
+</body>
+
+</html>

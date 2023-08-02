@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>boolean</title>
+</head>
+
+<body>
+  <script>
+    // 1번 연습문제
+    console.log(true && false) // false
+    console.log(false && true) // flase
+    console.log(false || true) // true
+    console.log(true || true) // true
+
+    // 2번 연습문제
+    console.log(!!'가') // true
+    console.log(!'') // true
+
+    // 3번 연습문제(단락 회로 평가)
+    console.log('가' && '나') // true가 아니라 '나' 출력, '나'는 true로 평가
+    console.log(0 && -1) // flase가 아니라 0 출력, 0은 false로 평가
+    console.log(0 && 1) // false가 아니라 0 출력, 0은 false로 평가
+    console.log(1 && 1) // true가 아니라 1 출력, 1은 true로 평가
+    console.log(1 && true) // true
+    console.log(0 || true) // true
+  </script>
+</body>
+
+</html>

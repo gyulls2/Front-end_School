@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+
+<body>
+  <button id="btn1">클릭해봐요!</button>
+  <button id="btn2">클릭해봐요!</button>
+  <script>
+    // this는 호출되는 위치에 따라 다른 값을 출력한다
+
+    // 함수에서 this
+    function a() {
+      console.log(this) // window(전역)
+    }
+
+    const myObj = {
+      val1: 100,
+      func1() {
+        console.log(this) // myObj(객체)
+      }
+    }
+
+    let test = myObj.func1; // window(전역)
+
+    let button1 = document.getElementById("btn1");
+    let button2 = document.getElementById("btn2");
+
+    button1.addEventListener("click", myObj.func1); // <button id="btn1">클릭해봐요!</button>
+    button2.addEventListener("click", myObj.func1); // <button id="btn2">클릭해봐요!</button>
+
+
+
+    function sayName() {
+      console.log(this.name);
+    }
+
+    var name = 'Hero';
+    // 전역으로 선언한 name 변수의 앞에는 window 가 생략되어 있습니다. 
+    // 때문에 window.name === "Hero" 가 성립합니다.
+    let peter = {
+      name: 'Peter Parker',
+      sayName: sayName
+    };
+
+    let bruce = {
+      name: 'Bruce Wayne',
+      sayName: sayName
+    };
+
+    sayName();
+    peter.sayName();
+    bruce.sayName();
+
+
+
+  </script>
+</body>
+
+</html>

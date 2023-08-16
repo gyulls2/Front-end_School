@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+
+<body>
+  <script>
+    var peter = {
+      name: 'Peter Parker',
+      sayName: function () {
+        console.log(this.name);
+      }
+    }
+
+    var bruce = {
+      name: 'Bruce Wayne',
+    }
+    peter.sayName.call(bruce); // call 메서드를 사용해 this를 bruce로 바꿀 수 있음
+
+
+    // 아규먼트 전달 가능
+    // ,로 연결해서 여러개 인수 전달 가능
+    var peter = {
+      name: 'Peter Parker',
+      sayName: function (감탄사) {
+        console.log(this.name + 감탄사);
+      }
+    }
+
+    var bruce = {
+      name: 'Bruce Wayne',
+    }
+    peter.sayName.call(bruce, '!');
+
+    // call과 apply 차이
+    // 아규먼트 전달 형태
+    // apply: 아규먼트를 단일한 배열로 전달
+    // call: ,로 연결해서 여러개의 아규먼트 전달
+
+    var peter = {
+      name: 'Peter Parker',
+      sayName: function (is, is2) {
+        console.log(this.name + ' is ' + is + ' or ' + is2);
+      }
+    }
+
+    var bruce = {
+      name: 'Bruce Wayne',
+    }
+
+    // 결과 같음
+    peter.sayName.apply(bruce, ['batman', 'richman']);
+    peter.sayName.call(bruce, 'batman', 'richman');
+
+
+
+    // bind() 는 this가 고정된 새로운 함수를 반환합니다.
+    function sayName() {
+      console.log(this.name);
+    }
+
+    var bruce = {
+      name: 'bruce',
+      sayName: sayName
+    }
+
+    var peter = {
+      name: 'peter',
+      sayName: sayName.bind(bruce)
+    }
+
+    peter.sayName();
+    bruce.sayName();
+
+  </script>
+</body>
+
+</html>

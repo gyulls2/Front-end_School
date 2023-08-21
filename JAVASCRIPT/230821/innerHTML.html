@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    p {
+      text-align: right;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <p></p>
+  <input type="text">
+  <button>작동!</button>
+
+  <script>
+    const text = document.querySelector('p');
+    const inp = document.querySelector('input');
+    const btn = document.querySelector('button');
+
+    btn.addEventListener('click', function () {
+      text.innerHTML = inp.value;
+    });
+
+    // <img src='x' onerror='alert(1)'>
+    // <script> 요소를 사용하지 않고, 자바스크립트를 실행 가능하기 때문에
+    // 보안 관련 위험성이 있다.
+  </script>
+</body>
+
+</html>

@@ -13,31 +13,45 @@
 
   <ul></ul>
   <button>생산시작!</button>
+
+  <div id="parentElement">
+    <span id="childElement">hello guys~</span>
+  </div>
+
+
   <script>
-    const parent = document.querySelector('.parent')
-    const text = document.createElement('p')
-    const textInside = document.createTextNode('문장입니다.')
+    const text = document.createElement('p');
+    const text2 = document.createElement('p');
+    const textInside = document.createTextNode('문장입니다.');
+    text.appendChild(textInside);
+    text2.appendChild(textInside);
 
-    parent.appendChild(text)
-    parent.appendChild(text)
-    text.appendChild(textInside)
+    const parent = document.querySelector('.parent');
 
+    // parent.appendChild(text);
+    // parent.appendChild(text2);
 
+    parent.append('text 입니다~', text, text2);
+
+    // parent.removeChild(text2);
+    // parent.remove();
+
+    // li 한번에 여러개 만들기
     const myBtn = document.querySelector("button");
     const myUl = document.querySelector("ul");
 
     // myBtn.addEventListener('click', function () {
-    //   for (let i = 0; i < 5; i++) {
-    //     const myLi = document.createElement('li');
-    //     myUl.appendChild(myLi);
-    //   }
+    //     for (let i = 0; i < 5; i++) {
+    //         const myLi = document.createElement('li');
+    //         myUl.appendChild(myLi);
+    //     }
     // })
 
     myBtn.addEventListener('click', function () {
       for (let i = 0; i < 5; i++) {
         const myLi = document.createElement('li');
         const btnDel = document.createElement('button');
-        const btnTxt = document.createTextNode = '버튼';
+        const btnTxt = document.createTextNode('버튼');
 
         btnDel.append(btnTxt);
         btnDel.addEventListener('click', () => {
@@ -47,6 +61,15 @@
         myUl.appendChild(myLi);
       }
     });
+
+
+    // 첫번째 자식 요소로 붙이기
+    // parentElement.insertBefore(target, location); target요소를 parentElement의 자식인 location 위치 앞으로 이동합니다.
+
+    var span = document.createElement("span");
+    var sibling = document.getElementById("childElement");
+    var parentDiv = document.getElementById("parentElement");
+    parentDiv.insertBefore(span, sibling);
   </script>
 </body>
 

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+
+<body>
+  <script>
+    function RobotFactory2(name) {
+      this.name = name;
+    }
+
+    RobotFactory2.prototype.sayYourName = function () {
+      console.log(`삐리비리. 제 이름은 ${this.name}입니다. 주인님.`);
+    }
+
+    const robot = new RobotFactory2("규리")
+    // 생성자 함수가 인스턴스를 생성하게 되면 그 안에는 숨겨진 프로퍼티인 [[Prototype]] 이 존재한다.
+    // 코드상에서는 __proto__로 접근할 수  있다.
+    // prototype : function안에 존재하는 참조값
+    // __proto__ : 객체 안에 존재하는 숨겨진 프로퍼티
+    // => 인스턴스는 __proto__를 통해 생성자 함수의 prototype에 접근하여 필요한 여러가지 값과 메서드를 사용할 수 있습니다.
+    // => 프로토타입은 모든 인스턴스가 하나의 메서드를 공유하도록 만들어 자원을 더 효율적으로 사용
+
+
+
+    // 생성자 함수의 역할
+    // 1. 생성자 함수의 this가 인스턴스를 보게 한다
+    // 2. 인스턴스의 __proto__ 가 생성자 함수의 prototype을 참조하는 역할을 한다.
+
+
+
+
+
+    function NewFactory2(name) {
+      this.name = name;
+    }
+
+    NewFactory2.prototype.sayYourName = function () {
+      console.log(`삐리비리. 제 이름은 ${this.name}입니다. 주인님.`);
+    }
+
+    const robot1 = new NewFactory2('재현');
+
+    // 객체를 생성자함수를 통해서 생성해보기
+    const me = {
+      name: '한재현',
+      address: '제주도 제주시 인다 1길',
+      phoneNum: '010-8000-0000',
+      canWalk: function () {
+        console.log('재현이가 걷는다.');
+      },
+      teaching: function (student) {
+        student.levelUp();
+      }
+    }
+
+    const lion = {
+      level: 1,
+      levelUp: function () {
+        this.level++;
+      }
+    }
+
+    function Me() {
+      this.address = '제주도 제주시 인다 1길';
+      this.phoneNum = '010-8000-0000';
+      function canWalk() { };
+    }
+
+    Me.prototype.name = "한재현";
+
+    Me.prototype.canWalk = function () {
+      console.log('재현이가 걷는다.');
+    };
+
+    Me.prototype.teaching = function (student) {
+      student.levelUp();
+    }
+
+    function Lion() {
+      this.level = 1;
+    }
+
+    Lion.prototype.levelUp = function () {
+      this.level++;
+    }
+
+
+
+
+  </script>
+</body>
+
+</html>

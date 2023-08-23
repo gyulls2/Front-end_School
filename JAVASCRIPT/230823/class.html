@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+
+<body>
+  <script>
+    class Me {
+      constructor() {
+        this.name = "규리";
+        this.address = '제주도 제주시 인다 1길';
+        this.phoneNum = '010-8000-0000';
+      }
+      canWalk() {
+        console.log(`${this.name}가 걷는다.`);
+      }
+      teaching(student) {
+        student.levelUp();
+      }
+    }
+
+    class Lion {
+      constructor() {
+        this.level = 1;
+      }
+      levelUp() {
+        this.level++;
+      }
+    }
+
+    const me = new Me()
+    const lion = new Lion()
+
+  </script>
+</body>
+
+</html>

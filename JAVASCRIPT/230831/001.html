@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    #box {
+      width: 100px;
+      height: 100px;
+      background-color: skyblue;
+      position: relative;
+      right: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="box"></div>
+  <script>
+    const box = document.querySelector("#box");
+    let current = 0;
+    // window.addEventListener("keydown",(e)=>{
+    //   if (e.key === "ArrowRight") {
+    //     current++;
+    //     box.style.transform = `translateX(${current}px)`;
+    //   } else if(e.key === "ArrowLeft"){
+    //     current--;
+    //     box.style.transform = `translateX(${current}px)`;
+    //   }
+    // })
+
+
+    // requestAnimationFrame 으로 성능 개선
+    let keys = "";
+    function move(event) {
+      keys = event.key;
+    }
+
+    function stop() {
+      keys = "";
+    }
+
+    document.addEventListener("keydown", move)
+    document.addEventListener("keyup", stop)
+
+    function play() {
+      console.log(keys)
+      switch (keys){
+        case "ArrowRight":
+          current++;
+          box.style.transform = `translateX(${current}px)`;
+          break;
+        case "ArrowLeft":
+          current--;
+          box.style.transform = `translateX(${current}px)`;
+          break;
+      }
+
+      requestAnimationFrame(play)
+    }
+
+    requestAnimationFrame(play)
+
+
+
+
+  </script>
+</body>
+
+</html>

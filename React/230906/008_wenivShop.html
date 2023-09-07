@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <title>위니브 샵</title>
+  <link rel="stylesheet" href="src/style/reset.css">
+  <link rel="stylesheet" href="src/style/style.css">
+</head>
+
+<body>
+
+  <div id="root"></div>
+
+  <script type="text/babel">
+
+    function Card({ productName, price, thumbnailImg }) {
+      const url = "http://test.api.weniv.co.kr/" + thumbnailImg;
+      return (
+        <article className="product-item">
+          <div className="product-img">
+            <img src={url} alt="" />
+          </div>
+
+          <h2 className="product-name sl-ellipsis">{productName}</h2>
+          <button className="like-btn"></button>
+          <div class="product-price">
+            <strong class="price m-price">{price}<span>원</span></strong>
+          </div>
+        </article>
+      )
+    }
+
+
+    const itemDataList = fetch("http://test.api.weniv.co.kr/mall").then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP ERROR!! State: ${response.status}`);
+      }
+      return response.json()
+    }).then((data) => {
+      const body = (
+        <main className="product">
+          <ul class="product-list">
+            {data.map((item) => {
+              return <Card productName={item.productName} price={item.price} thumbnailImg={item.thumbnailImg} />
+            })}
+          </ul>
+        </main>
+
+      )
+
+      const root = ReactDOM.createRoot(document.querySelector("#root"))
+      return root.render(body);
+    }).catch((error) => {
+      console.error(error)
+    })
+
+  </script>
+</body>
+
+</html>

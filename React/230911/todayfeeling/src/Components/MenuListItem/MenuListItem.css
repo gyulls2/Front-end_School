@@ -1,0 +1,12 @@
+.btn-item {
+  height: 50px;
+  width: 100%;
+}
+
+.btn-item:hover {
+  background-color: green;
+}
+
+.btn-item:focus {
+  background-color: skyblue;
+}

@@ -1,10 +1,10 @@
 import React from "react";
 
-const Homepage = (props) => {
+const Homepage = ({ idUser, setLogin }) => {
   return (
     <>
-      <h1>{props.idUser}님 반가워요!</h1>
-      <button>로그아웃</button>
+      <h1>{idUser}님 반가워요!</h1>
+      <button onClick={() => setLogin(false)}>로그아웃</button>
     </>
   );
 };

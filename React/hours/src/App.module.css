@@ -1,0 +1,70 @@
+@font-face {
+  font-family: "GmarketSansMedium";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "OTEnjoystoriesBA";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/OTEnjoystoriesBA.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  width: 100vw;
+  padding: 40px;
+  box-sizing: border-box;
+  background: #5b2386;
+  color: #fff;
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "GmarketSansMedium";
+}
+
+.logo {
+  height: 250px;
+  margin: 20px auto;
+  background: url("../public/images/logo_bg.png") no-repeat center center;
+  margin-bottom: 60px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainTitle {
+  color: #f5df4d;
+  font-family: "OTEnjoystoriesBA";
+  font-size: 36px;
+
+  margin-bottom: 80px;
+
+}
+
+.mainText {
+  margin-bottom: 80px;
+
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.8;
+  position: relative;
+}
+
+.mainText span {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.quotes {
+  position: absolute;
+  top: 25%;
+  left: 8%;
+}

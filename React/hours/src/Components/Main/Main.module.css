@@ -1,0 +1,12 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  height: 250px;
+  margin: 20px auto;
+  background: url("../../../public/images/logo_bg.png") no-repeat center center;
+
+}

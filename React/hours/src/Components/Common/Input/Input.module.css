@@ -1,0 +1,12 @@
+.inpText {
+  border-radius: 7px;
+  background: #fff;
+  padding: 15px;
+  margin: 0 10px;
+
+  border: none;
+}
+
+.inpText::placeholder {
+  color: #babcbe;
+}

@@ -3,6 +3,7 @@ import styles from "./App.module.css";
 import Input from "./Components/Common/Input/Input";
 import Button from "./Components/Common/Button/Button";
 import Modal from "./Components/Common/Modal/Modal";
+import Header from "./Components/Header/Header";
 
 function App() {
   return (
@@ -13,9 +14,7 @@ function App() {
         <img src="/images/licat.png" alt="" />
         <Button color="#FCEE21" text="종료하고 진짜 훈련하러 가기 GO!GO!" />
       </Modal> */}
-      <div className={styles.logo}>
-        <img src="/images/logo.png" alt="" />
-      </div>
+      <Header />
 
       <h2 className={styles.mainTitle}>
         “연습은 어제의 당신보다 당신을 더 낫게 만든다.”

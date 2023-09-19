@@ -176,11 +176,15 @@ button {
   font-family: "GmarketSansBold" , sans-serif; 
 }
 
+button:enabled{
+  cursor: pointer;
+}
+
 input {
   font-family: "GmarketSansMedium", sans-serif;
 }
 
-.a11y-hidden {
+.a11y {
   clip: rect(1px, 1px, 1px, 1px);
   clip-path: inset(50%);
   width: 1px;

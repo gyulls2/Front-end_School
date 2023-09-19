@@ -1,0 +1,113 @@
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+img{
+  vertical-align: top;
+}
+
+button{
+  cursor: pointer;
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+  color: #fff;
+  background: radial-gradient(
+      293.21% 130.49% at 3.59% 5.28%,
+      #f0f4ff 0%,
+      #a5b6ee 100%
+    )
+    no-repeat;
+  font-family: "Pretendard-Regular";
+  text-align: center;
+}
+
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+}
+
+header .img-logo {
+  margin: 72px 0 60px;
+}
+
+.cont-main {
+  width: 400px;
+  min-height: 360px;
+  margin: 0 auto 60px;
+  padding: 48px 44px 40px;
+  box-sizing: border-box;
+  border-radius: 16px;
+  background: linear-gradient(144deg, #5572bb 2.13%, #374b7c 102.97%);
+
+  /* shadow */
+  box-shadow: 20px 20px 60px 10px rgba(55, 75, 124, 0.4);
+}
+
+.cont-main h1 {
+  font-size: 24px;
+}
+.cont-main hr {
+  height: 1px;
+  border: 0;
+  background-color: #3d538a;
+}
+
+.cont-main .form-timer {
+  margin-top: 33px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.cont-main .form-timer label {
+  width: 80px;
+
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 4px;
+
+  color: #a5b6ee;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.cont-main .form-timer label input {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+
+  padding: 16px 0 16px 14px;
+  box-sizing: border-box;
+  color: #FFF;
+  font-size: 40px;
+  font-weight: 700;
+
+  border: none;
+  background: transparent url("../images/box.svg") no-repeat;
+}
+
+.cont-main .form-timer .cont-btn{
+  width: 100%;
+}
+
+
+.cont-main .form-timer .cont-btn button {
+  margin-top: 40px;
+  padding: 16px 23px;
+
+  border-radius: 50px;
+  background: #324577;
+  color: #617199;
+  border: none;
+  box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.05) inset;
+
+  font-size: 14px;
+  font-weight: 700;
+}

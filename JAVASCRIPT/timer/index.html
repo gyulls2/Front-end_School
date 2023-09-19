@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timer</title>
+  <link rel="stylesheet" href="style/normalize.css">
+  <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+      <img src="./images/logo.svg" alt="weniv" class="img-logo">
+    </header>
+    <main class="cont-main">
+      <h1>TIMER</h1>
+      <hr />
+      <form class="form-timer">
+        <label>HRS
+          <input class="inp-hour" type="number" min="0" max="99" value="00" onchange="leadingZeros(this)" onkeyup="leadingZeros(this)"
+            onclick="leadingZeros(this)">
+        </label>
+
+        <label>MIN
+          <input class="inp-min" type="number" min="0" max="59" value="00" onchange="leadingZeros(this)" onkeyup="leadingZeros(this)"
+          onclick="leadingZeros(this)">
+        </label>
+
+        <label>SEC
+          <input class="inp-sec" type="number" min="0" max="59" value="00" onchange="leadingZeros(this)" onkeyup="leadingZeros(this)"
+          onclick="leadingZeros(this)">
+        </label>
+
+        <div class="cont-btn">
+          <button type="button" onclick="startTimer()">
+            <img src="images/icon-start-disabled.svg" alt="">
+            START</button>
+          <button type="button">
+            <img src="images/icon-reset-disabled.svg" alt="">
+            RESET</button>
+        </div>
+      </form>
+    </main>
+    <footer>
+      ⓒ WENIV Corp.
+    </footer>
+
+    <script src="js/index.js"></script>
+    <script src="js/timer.js"></script>
+
+  </div>
+</body>
+
+</html>

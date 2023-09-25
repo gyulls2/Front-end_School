@@ -6,6 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>간단한 Todo 리스트</title>
+  <style>
+    .true {
+      text-decoration: line-through;
+    }
+  </style>
 </head>
 
 <body>
@@ -66,12 +71,31 @@
     const input = form.querySelector(".inp-todo");
     const list = document.querySelector(".todo-list");
 
-    form.addEventListener("submit", function (e) {
+    form.addEventListener("submit", (e) => {
       e.preventDefault();
       todos.addItem(input.value);
-      list.innerHTML = todos.getItems().map((item) =>`<li>${item.itmeDesc}</li>`).join("");
+      list.innerHTML = todos.getItems().map((item) => `<li class=${item.finished}>${item.itmeDesc}<button class="btn-finish">완료</button></li>`).join("");
+      finishBtnHandler();
       input.value = "";
     })
+
+    const finishBtnHandler = () => {
+      const btnFinish = document.querySelectorAll(".btn-finish");
+
+      btnFinish.forEach(item => {
+        item.addEventListener("click", (e) => {
+          const todo = item.closest("li").textContent.slice(0, -2);
+          item.closest("li").classList.toggle(true);
+          item.textContent = item.textContent === "완료" ? "미완료" : "완료";
+          
+          const todoObj = todos.getItems().filter(item => item.itmeDesc === todo);
+          todoObj[0].changeStatus();
+        })
+      })
+    }
+
+
+
 
   </script>
 </body>

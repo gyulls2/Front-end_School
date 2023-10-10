@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+
+<body>
+  <script>
+    // 두 개의 정렬된 배열을 병합하고 정렬합니다.
+    function mergeSortedArrays(arr1, arr2) {
+      // return [...arr1, ...arr2].sort((a, b) => (a - b));
+
+      if (arr1.length === 0) {
+        return arr2;
+      }
+      if (arr2.length === 0) {
+        return arr1;
+      }
+
+      // 병합한 배열을 담을 공간
+      const mergedArray = [];
+
+      let arr1Item = arr1[0]
+      let arr2Item = arr2[0]
+      let i = 1;
+      let j = 1;
+
+      // arr1Item과 arr2Item 둘다 undefined가 되면 종료
+      while (arr1Item || arr2Item) {
+
+        // arr1Item의 원소가 arr2Item의 원소보다 작다면 arr1Item를 먼저 PUSh 한다.
+        if (arr1Item < arr2Item) {
+          mergedArray.push(arr1Item);
+          arr1Item = arr1[i];
+          i++;
+        } else {
+
+          // arr2Item의 원소가 arr1Item의 원소보다 작다면 arr2Item를 먼저 PUSh 한다.
+          mergedArray.push(arr2Item);
+          arr2Item = arr2[j];
+          j++;
+        }
+      }
+      return mergedArray;
+    }
+
+    mergeSortedArrays([1, 3, 5, 7, 9], [2, 4, 6, 8, 10])
+    mergeSortedArrays([1, 2, 3], [2, 3, 4])
+  </script>
+</body>
+
+</html>
